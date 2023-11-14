@@ -1,199 +1,180 @@
-@charset "UTF-8";
 *{
-	margin: 0;
-	padding:0;
+    padding: 0;
+    margin: 0;
+    outline: 0;
 }
-a{
-    text-decoration: none;
+
+#header{
+ width: 100%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 1000;
 }
- 
-/* 화면 전체 렙 */
-.wrapper{
-	width: 1900px;
-}
-/* content 랩 */
-.wrap{
-	width : 1080px;
-	margin: auto;
-}
-/* 홈페이지 기능 네비 */ 
-.top_gnb_area{
-	width: 100%;
-	height: 50px;
-	background-color: #f0f0f1;
-    position:relative;
-}
- 
-.top_gnb_area .list{
-    position: absolute;
-    top: 0px;
-    right: 0;
-    
-}
- 
-.top_gnb_area .list li{
-    list-style: none;    
-    float : left;
-    padding: 13px 15px 0 10px;
-    font-weight: 900;
-    cursor: pointer;
-}
-/* 로고, 검색, 로그인 */
-.top_area{
-	width: 100%;
-    height: 150px;
-    /* background-color: #f7f0b9; */
-}
-/* 로고 영역 */
-.logo_area{
-    width: 25%;
-    height: 100%;
-    float:left;
-}
-.logo_area img{
+
+iframe {
+    border: none;
+    display: block;
     width: 100%;
-    height: 100%;
 }
- 
-/* 검색 박스 영역 */
-.search_area{
-	width: 50%;
-	height: 100%;
-	background-color: yellow;
-	float:left;	
+.Main_main{
+	width:100%
 }
-/* 로그인 버튼 영역 */
-.login_area{
-	width: 25%;
-	height: 100%;
-	display: inline-block;	
-	text-align: center;		
-}
-.login_button{
-	height: 50%;
-    background-color: #D4DFE6;
-    margin-top: 30px;
-    line-height: 77px;
-    font-size: 40px;
-    font-weight: 900;
-    border-radius: 10px;
-    cursor: pointer;	
-}
-.login_area>span{
-	margin-top: 10px;
-    font-weight: 900;
-    display: inline-block;
-}
-.login_button{
-	height : 50%;
-	background-color: #D4DFE6;
-	margin-top:30px;
-}
-
-/* 제품 목록 네비 */
-.navi_bar_area{
-	width: 100%;
-    height: 70px;
-    background-color: #7696fd;
-}
-
-/* 홈페이지 메인 제품 목록  */
-.content_area{
-	width: 100%;
-    background-color: #97ef97;
-    height: 1000px;
-}
-
-/* 로그인 성공 영역 */
-.login_success_area{
-    height: 62%;
-    width: 80%;
-    border: 2px solid #7474ad;
-    border-radius: 15px;
-    margin: 5% auto;
+.Main_a{
     padding-top: 5%;
+    background-color: #FFFAE0;
 }
-.login_success_area>span{
-    display : block;
-    text-align: left;
-    margin-left: 10%;
+.Main_a_Top{
+	width:100%;
+}
+.Main_a_div{
+    display: flex;
+    margin: 0 auto;
+	justify-content:center;
+    padding: 5%;
+    background-color: #FFFAE0;
+    margin-top: 2%
+}
+.Main_a_Top > .Main_a_Title{
+    width: 45%;
+    margin: 0 auto;
+    margin-left: 20%;
+    padding: 5%;
+    background-color: #FFFAE0;
 }
 
-.login_success_area>a{
-    font-size: 15px;
-    font-weight: 900;
+.Main_a_Top > .Main_a_div>.Main_a_Title > .Main_a_Text{
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 73px;
+    margin-bottom: 3.2rem;
+}
+
+.Main_a_Title > .Main_desc{
+    font-weight: 400;
+    font-size: 20px;
+    color: #7c7c7c;
+    line-height: 30px;
+}
+
+.Main_a_Button > .Main_aa_Button{
+	margin-top: 3%;
+    width: 30%;
+    border-radius: 10px;
+    background-color: #FF6B00;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 12px 5px;
     display: inline-block;
-    margin-top: 5px;
-    background: #e1e5e8;
-    width: 82px;
-    height: 22px;
-    line-height: 22px;
-    border-radius: 25px;
-    color: #606267;    
+    vertical-align: middle;
+    text-align: center;
+    margin-right: 1rem;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.Main_a_Logo{
+    width: 100%;
+    height: auto;
+}
+.Main_b{
+    background-color: #f9f9f9;
 }
 
-/* footer navai 영역 */
-.footer_nav{
-    width:100%;
-    height:50px;
+.Main_b > .Main_b_Content{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
 }
-.footer_nav_container{
-    width: 100%;
-    height: 100%;
-    background-color:#8EC0E4;
-}
-.footer_nav_container>ul{
-    font-weight : bold;
-    float:left;
-    list-style:none;
-    position:relative;
-    padding-top:10px;
-    line-height: 27px;
-    font-family: dotum;
-    margin-left: 10px;
-}
-.footer_nav_container>ul>li{
-    display:inline;
-    width: 45px;
-    height: 19px;
-    padding: 10px 9px 0 10px;
-}
-.footer_nav_container>ul>span{
-    margin: 0 4px;
-}
-/* footer 영역 */
-.footer{
-    width:100%;
-    height:130px;
-    background-color:#D4DFE6;
-    padding-bottom : 50px;
-}
-.footer_container{
-    width: 100%;
-    height: 100%;
-    margin: auto;
-}
-.footer_left>img {
-    width: 150%;
-    height: 130px;
-    margin-left: -20px;
-    margin-top: -12px;
-}
-.footer_left{
-    float :left;
-    width: 170px;
-    margin-left: 20px;
-    margin-top : 30px;
-    
-}
-.footer_right{
-    float :left;
-    width: 680px;
-    margin-left: 70px;
-    margin-top : 30px;
-}  
 
-/* float 속성 해제 */
-.clearfix{
-	clear: both;
+.Main_Service{
+    font-weight: 700;
+    font-size: 18px;
+    color: #FF6F0F;
+    margin-bottom: 10%;
+}
+
+.Main_Title1{
+    font-size: 42px;
+    line-height: 57px;
+    margin-bottom: 10%;
+}
+
+.Main_desc{
+    font-weight: 400;
+    font-size: 20px;
+    color: #7c7c7c;
+    line-height: 30px;
+}
+
+.Main_b_Button{
+    margin-top: 3.2rem;
+}
+
+.TextBtn{
+    font-size: 18px;
+    line-height: 23.76px;
+    font-weight: 700;
+    background-color: #E9ECEF;
+    color: #212529;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 12px 2rem;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.Main_c{
+    background-color: #FFF8F1;
+}
+
+.MainImg2{
+    height: 70%;
+}
+
+.Main_c_Content{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: space-between;
+    margin-left: 15%;
+}
+
+.Main_d{
+    background-color: #f9f9f9;
+}
+
+.Main_d_Content{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.Main_e{
+    background-color: #F6FDEC; 
+}
+
+.Main_e_Content{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.Main_aa_Button:hover{
+    background-color: #d9600f;
+}
+
+.TextBtn:hover{
+    background-color: #dedfe0;
 }
