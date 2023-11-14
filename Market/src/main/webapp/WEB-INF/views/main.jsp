@@ -1,124 +1,151 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-	 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Welcome BookMall</title>
-<link rel="stylesheet" href="resources/css/main.css">
+<script src="https://kit.fontawesome.com/a91a455094.js"
+	crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="resources/css/header.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/main.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/footer.css">
+<!--헤더 부분 삽입-->
+
+<title>Index Page</title>
 </head>
 <body>
-
-<div class="wrapper">
-	<div class="wrap">
-		<div class="top_gnb_area">
-			<ul class="list">
-			 <c:if test = "${member == null}">
- 
-    
-                <li >
-                    <a href="/member/login">로그인</a>
-                </li>
-                <li>
-                    <a href="/member/join">회원가입</a>
-                </li>
-                </c:if>
-                
-                <c:if test="${member != null }">
-                	<c:if test="${member.adminCk == 1 }">
-                        <li><a href="/admin/main">관리자 페이지</a></li>
-                    </c:if>                    
-                    <li>
-                        로그아웃
-                    </li>
-                    <li>
-                        마이룸
-                    </li>
-                    <li>
-                        장바구니
-                    </li>
-                </c:if> 
-                <li>
-                    고객센터
-                </li> 
-                           
-            </ul>  
-		</div>
-		<div class="top_area">
-			<div class="logo_area">
-				<a href="/main"><img src="resources/img/logo.png" ></a>    
-			</div>
-			<div class="search_area">
-				<h1>Search area</h1>
-			</div>
-			<div class="login_area">
-			
-			 <!-- 로그인 하지 않은 상태 -->
-                <c:if test = "${member == null }">
-                    <div class="login_button"><a href="/member/login">로그인</a></div>
-                    <span><a href="/member/join">회원가입</a></span>                
-                </c:if> 
-                
-              <!-- 로그인한 상태 -->
-                <c:if test="${ member != null }">
-                    <div class="login_success_area">
-                        <span>회원 : ${member.memberName}</span>
-                        <span>충전금액 : <fmt:formatNumber value="${member.money }" pattern="\#,###.##"/></span>
-                        <span>포인트 : <fmt:formatNumber value="${member.point }" pattern="#,###" /></span>
-                    	<a href="/member/logout.do">로그아웃</a>
-                    </div>
-                </c:if>
-			
-			</div>
-			<div class="clearfix"></div>			
-		</div>
-		<div class="navi_bar_area">
-			<h1>navi area</h1>
-		</div>
-		<div class="content_area">
-			<h1>content area</h1>
-		</div>
-		<!-- Footer 영역 -->
-        <div class="footer_nav">
-            <div class="footer_nav_container">
-                <ul>
-                    <li>회사소개</li>
-                    <span class="line">|</span>
-                    <li>이용약관</li>
-                    <span class="line">|</span>
-                    <li>고객센터</li>
-                    <span class="line">|</span>
-                    <li>광고문의</li>
-                    <span class="line">|</span>
-                    <li>채용정보</li>
-                    <span class="line">|</span>
-                </ul>
-            </div>
-        </div> <!-- class="footer_nav" -->
-        
-        <div class="footer">
-            <div class="footer_container">
-                
-                <div class="footer_left">
-                    <img src="resources/img/Logo.png">
-                </div>
-                <div class="footer_right">
-                    (주) VamBook    대표이사 : OOO
-                    <br>
-                    사업자등록번호 : ooo-oo-ooooo
-                    <br>
-                    대표전화 : oooo-oooo(발신자 부담전화)
-                    <br>
-                    <br>
-                    COPYRIGHT(C) <strong>kimvampa.tistory.com</strong>    ALL RIGHTS RESERVED.
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div> <!-- class="footer" -->
+	<div id="header">
+			<jsp:include page="header.jsp"></jsp:include>
 	</div>
-</div>
 
+	<!--메인 전체 화면 세션-->
+	<section class="Main_main">
+		<!--메인 첫단 시작-->
+		<section class="Main_a">
+			<div class="Main_a_Top">
+				<div class="Main_a_div">
+					<div class="Main_a_Title">
+						<h1 class="Main_a_Text">
+							당신 근처의<br> 지역 생활 커뮤니티
+						</h1>
+						<p class="Main_desc">
+							동네라서 가능한 모든 것<br> 당근에서 가까운 이웃과 함께해요.
+						</p>
+						<br>
+						<!--당근 마켓 회원가입 로그인 경로-->
+						<div class="Main_a_Button">
+						<%-- <c:if test="${member == null}"> --%>
+						<a href="/member/join" class="Main_aa_Button"> 회원 가입 <!--Signup.html-->
+							</a> <a href="member/login" class="Main_aa_Button"> 로그인 <!--Login.html-->
+							</a>
+						<%-- </c:if> --%>
+							
+						</div>
+					</div>
+					<div>
+						<img src="resources/image/MainLogo.png" class="Main_a_Logo"
+							alt="중고거래">
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--메인 두번째단 시작-->
+		<section class="Main_b">
+			<div class="Main_b_Content">
+				<div class="Main_b_image">
+					<img src="resources/image/MainImg.png" class="MainImg1"
+						alt="중고거래사진" style="height: 60%;">
+				</div>
+				<div>
+					<p class="Main_Service">중고 거래</p>
+					<h1 class="Main_Title1">
+						믿을만한<br> 이웃간 중고 거래
+					</h1>
+					<p class="Main_desc">
+						동네 주민들과 가깝고 따뜻한 거래를<br> 지금 경험해보세요.
+					</p>
+					<div class="Main_b_Button">
+						<a class="TextBtn" href="">인기 매물 보기 <!--인기 매물 보기 클릭 .html-->
+						</a> <a class="TextBtn" href="">믿을 수 있는 중고 거래 <!--믿을 수 있는 중고 거래 클릭 .html-->
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="Main_c">
+			<div class="Main_c_Content">
+				<div class="Main_c_img1">
+					<img src="resources/image/MainHomeTown.png" class="MainImg2"
+						alt="이웃과 함께하는 동네생활">
+				</div>
+				<div>
+					<p class="Main_Service">동네 생활</p>
+					<h1 class="Main_Title1">
+						이웃만 아는<br> 동네 정보 이야기
+					</h1>
+					<p class="Main_desc">
+						우리동네의 다양한 정보의 이야기를<br> 공감과 댓글로 나누어요.
+					</p>
+					<br>
+					<br>
+					<br>
+					<div class="Main_c_img2">
+						<img src="resources/image/MainLife.png" class="MainImg3"
+							alt="동네 생활 아래">
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--3번째 Main 시작-->
+		<section class="Main_d">
+			<div class="Main_d_Content">
+				<div class="Main_d_img1">
+					<img src="resources/image/MainImg2.png" class="MainImg4"
+						alt="근처 동네 알바 구하기">
+				</div>
+				<div>
+					<p class="Main_Service">알바</p>
+					<h1 class="Main_Title1">
+						걸어서 10분!<br> 동네 알바 구하기
+					</h1>
+					<p class="Main_desc">
+						당근하듯 쉽고, 편하게<br> 당근 알바로 동네 알바를 구할 수 있어요.
+					</p>
+					<div class="Main_b_Button">
+						<a class="TextBtn" href="">내 근처 알바 보기 <!--내 근처 알바 보기 클릭 .html-->
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="Main_e">
+			<div class="Main_e_Content">
+				<div class="Main_e_img1">
+					<img src="resources/image/MainNext.png" class="MainImg5"
+						alt="당근 동네 업체">
+				</div>
+				<div>
+					<p class="Main_Service">동네 업체</p>
+					<h1 class="Main_Title1">
+						내 근처에서 찾는<br> 동네업체
+					</h1>
+					<p class="Main_desc">
+						이웃들의 추천 후기를 확인하고<br> 동네 곳곳의 업체들을 찾을 수 있어요.
+					</p>
+					<div class="Main_b_Button">
+						<a target="blank" class="TextBtn" href="">당근 동네 업체 보기 <!--당근 동네 업체 보기 href-->
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+	</section>
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
